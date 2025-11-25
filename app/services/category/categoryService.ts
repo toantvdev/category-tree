@@ -40,26 +40,33 @@ export const categoryService = {
     return result.data;
   },
 
-  // Cập nhật category
   update: async (dto: UpdateCategory): Promise<Category> => {
-    const response = await fetch(`${BASE_URL}/category/${dto.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name_vi: dto.name_vi,
-        name_en: dto.name_en,
-      }),
-    });
-    if (!response.ok) {
-      const error = await response.json().catch(() => ({ message: 'Failed to update category' }));
-      throw new Error(error.message || 'Failed to update category');
-    }
-    const result: ApiResponse<Category> = await response.json();
-    return result.data;
-  },
+  const payload = {
+    name_vi: dto.name_vi,
+    name_en: dto.name_en || dto.name_vi,
+    slug: dto.slug,
+    order: dto.order ?? 1,
+    creator_id: "1",
+    modifier_id: "1",
+    parent_id: dto.parent_id ?? null,
+  };
 
+  const response = await fetch(`${BASE_URL}/category/category/${dto.id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    throw new Error(err.message || 'Cập nhật danh mục thất bại');
+  }
+
+  const result: ApiResponse<Category> = await response.json();
+  return result.data;
+},
   // Xóa category
   delete: async (id: string): Promise<void> => {
     const response = await fetch(`${BASE_URL}/category/${id}`, {

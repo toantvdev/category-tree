@@ -29,6 +29,11 @@ export interface CreateCategory {
 
 export interface UpdateCategory {
   id: string;
-  name_vi?: string;
-  name_en?: string;
+  name_vi: string;
+  name_en: string;
+  slug: string;
+  order: number;
+  creator_id: string;
+  modifier_id: string;
+  parent_id: string | null;
 }
