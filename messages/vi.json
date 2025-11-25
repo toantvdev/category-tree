@@ -1,0 +1,33 @@
+{
+  "categoryTree": {
+    "title": "Danh mục",
+    "add": "Thêm danh mục",
+    "addRoot": "Thêm danh mục gốc",
+    "edit": "Chỉnh sửa danh mục",
+    "delete": "Xóa",
+    "expandAll": "Mở rộng tất cả",
+    "collapseAll": "Thu gọn tất cả",
+
+    "nameVi": "Tên danh mục tiếng Việt",
+    "nameEn": "Tên danh mục tiếng Anh",
+
+    "createSuccess": "Tạo mới thành công",
+    "updateSuccess": "Cập nhật thành công",
+    "failed": "Thao tác thất bại",
+    "deleteSuccess": "Xóa thành công",
+    "deleteFailed": "Xóa thất bại",
+    "validated": "Vui lòng nhập tên danh mục",
+    "categoryName": "Nhập tên danh mục",
+
+    "confirmDeleteTitle": "Xác nhận xóa",
+    "confirmDeleteMessage": "Bạn có chắc chắn muốn xóa danh mục \"{name}\" không?",
+    "confirm": "Xác nhận",
+    "cancel": "Hủy",
+
+    "loading": "Đang tải...",
+
+    "moveFailedChild": "Không thể kéo vào danh mục con của chính nó",
+    "moveSuccess": "Cập nhật vị trí thành công",
+    "moveFailed": "Cập nhật vị trí thất bại"
+  }
+}

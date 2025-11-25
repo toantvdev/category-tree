@@ -1,0 +1,33 @@
+{
+  "categoryTree": {
+    "title": "Categories",
+    "add": "Add Category",
+    "addRoot": "Add Root Category",
+    "edit": "Edit Category",
+    "delete": "Delete",
+    "expandAll": "Expand All",
+    "collapseAll": "Collapse All",
+
+    "nameVi": "Vietnamese Category Name",
+    "nameEn": "English Category Name",
+
+    "createSuccess": "Created Successfully",
+    "updateSuccess": "Updated Successfully",
+    "failed": "Operation Failed",
+    "deleteSuccess": "Deleted Successfully",
+    "deleteFailed": "Delete Failed",
+    "validated": " Please Enter Category Name",
+    "categoryName": "Enter Category Name",
+
+    "confirmDeleteTitle": "Confirm Delete",
+    "confirmDeleteMessage": "Are you sure you want to delete the category \"{name}\"?",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+
+    "loading": "Loading...",
+
+    "moveFailedChild": "Cannot move a category into its own child",
+    "moveSuccess": "Position updated successfully",
+    "moveFailed": "Failed to update position"
+  }
+}
