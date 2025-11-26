@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Modal, Form, Input, FormInstance } from "antd";
-import { useTranslations } from "next-intl";
-import { useEffect } from "react";
+import { Modal, Form, Input, FormInstance } from 'antd';
+import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
 
 interface Props {
   open: boolean;
@@ -23,45 +23,36 @@ export function CategoryFormModal({
   onCancel,
   onSubmit,
 }: Props) {
-  const t = useTranslations("categoryTree");
+  const t = useTranslations('categoryTree');
 
   const generateSlug = (text: string) => {
-    if (!text) return "";
+    if (!text) return '';
     return text
       .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/đ/g, "d")
-      .replace(/Đ/g, "D")
-      .replace(/[^a-z0-9\s-]/g, "")
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd')
+      .replace(/Đ/g, 'D')
+      .replace(/[^a-z0-9\s-]/g, '')
       .trim()
-      .replace(/\s+/g, "-");
+      .replace(/\s+/g, '-');
   };
 
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      form.resetFields();
+      return;
+    }
 
     if (isEditing && editingCategory) {
       form.setFieldsValue({
-        name_vi: editingCategory.name_vi || "",
-        name_en: editingCategory.name_en || "",
-        slug: editingCategory.slug || "",
-        order: editingCategory.order ?? 999,
+        name_vi: editingCategory.name_vi || '',
+        name_en: editingCategory.name_en || '',
+        slug: editingCategory.slug || '',
+        order: editingCategory.order ?? 0,
         parent_id: editingCategory.parent_id || null,
-        creator_id: editingCategory.creator_id || "1",
-        modifier_id: editingCategory.modifier_id || "1",
-      });
-    } else {
-      // Tạo mới
-      form.resetFields();
-      form.setFieldsValue({
-        name_vi: "",
-        name_en: "",
-        slug: "",
-        order: 999,
-        parent_id: null,
-        creator_id: "1",
-        modifier_id: "1",
+        creator_id: editingCategory.creator_id || '1',
+        modifier_id: editingCategory.modifier_id || '1',
       });
     }
   }, [open, isEditing, editingCategory, form]);
@@ -81,14 +72,13 @@ export function CategoryFormModal({
 
   return (
     <Modal
-      title={
-        isEditing ? t("edit") || "Sửa danh mục" : t("add") || "Thêm danh mục"
-      }
+      forceRender
+      title={isEditing ? t('edit') : t('add')}
       open={open}
       onOk={handleOk}
       onCancel={onCancel}
       confirmLoading={loading}
-      okText={isEditing ? "Cập nhật" : "Tạo mới"}
+      okText={isEditing ? t('update') : t('create')}
       cancelText="Hủy"
       width={520}
     >
@@ -110,29 +100,26 @@ export function CategoryFormModal({
         {/* Các field hiển thị */}
         <Form.Item
           name="name_vi"
-          label={t("nameVi") || "Tên tiếng Việt"}
-          rules={[{ required: true, message: "Vui lòng nhập tên tiếng Việt!" }]}
+          label={t('nameVi')}
+          rules={[{ required: true, message: t('validatedNameVi') }]}
         >
-          <Input
-            placeholder="Ví dụ: Điện thoại di động"
-            autoFocus
-            onChange={handleNameViChange}
-          />
+          <Input placeholder={t('exampleVi')} autoFocus onChange={handleNameViChange} />
         </Form.Item>
 
         <Form.Item
           name="name_en"
-          label={t("nameEn") || "Tên tiếng Anh (không bắt buộc)"}
+          label={t('nameEn')}
+          rules={[{ required: true, message: t('validatedNameEn') }]}
         >
-          <Input placeholder="Mobile Phones" />
+          <Input placeholder={t('exampleEn')} />
         </Form.Item>
 
         <Form.Item
           name="slug"
-          label="Slug (tự động sinh, có thể sửa)"
-          rules={[{ required: true, message: "Slug không được để trống!" }]}
+          label={t('slug')}
+          rules={[{ required: true, message: t('slugValidated') }]}
         >
-          <Input placeholder="dien-thoai-di-dong" />
+          <Input placeholder={t('slugEx')} />
         </Form.Item>
       </Form>
     </Modal>

@@ -1,5 +1,6 @@
 {
   "categoryTree": {
+    "mainTitle": "Category Tree",
     "title": "Categories",
     "add": "Add Category",
     "addRoot": "Add Root Category",
@@ -17,12 +18,22 @@
     "deleteSuccess": "Deleted Successfully",
     "deleteFailed": "Delete Failed",
     "validated": " Please Enter Category Name",
+    "validatedNameVi": " Please Enter Vi Category Name",
+    "validatedNameEn": " Please Enter En Category Name",
     "categoryName": "Enter Category Name",
+    "errorSave": "Error saving category",
+    "exampleVi": "Ex: Dien Thoai Di Dong",
+    "exampleEn": "Ex: Mobile Phone",
+    "slug": "Slug ( auto-generated, editable)",
+    "slugValidated": "Please Enter Slug",
+    "slugEx": "dien-thoai",
 
     "confirmDeleteTitle": "Confirm Delete",
     "confirmDeleteMessage": "Are you sure you want to delete the category \"{name}\"?",
     "confirm": "Confirm",
     "cancel": "Cancel",
+    "update": "Update",
+    "create": "Create",
 
     "loading": "Loading...",
 

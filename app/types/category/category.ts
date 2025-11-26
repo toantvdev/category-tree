@@ -1,5 +1,5 @@
 export interface Category {
-  id: string;
+  id: number;
   slug: string;
   name_vi: string;
   name_en: string;
@@ -8,32 +8,32 @@ export interface Category {
   updated_at: string;
   creator_id: string;
   modifier_id: string | null;
-  parent_id: string | null;
+  parent_id: number | null;
   children?: Category[];
   level?: number;
 }
 
 export interface UpdateCategoryOrder {
-  id: string;
-  parent_id: string | null;
+  id: number;
+  parent_id: number | null;
   order: number;
 }
 
 export interface CreateCategory {
   name_vi: string;
   name_en?: string;
-  parent_id?: string | null;
-  creator_id: string; // bắt buộc
-  modifier_id?: string; // thường cũng cần
+  parent_id?: number | null;
+  creator_id: string;
+  modifier_id?: string;
 }
 
 export interface UpdateCategory {
-  id: string;
+  id: number;
   name_vi: string;
   name_en: string;
   slug: string;
   order: number;
   creator_id: string;
   modifier_id: string;
-  parent_id: string | null;
+  parent_id: number | null;
 }

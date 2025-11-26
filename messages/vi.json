@@ -1,5 +1,6 @@
 {
   "categoryTree": {
+    "mainTitle": "Cây Danh Mục",
     "title": "Danh mục",
     "add": "Thêm danh mục",
     "addRoot": "Thêm danh mục gốc",
@@ -17,12 +18,22 @@
     "deleteSuccess": "Xóa thành công",
     "deleteFailed": "Xóa thất bại",
     "validated": "Vui lòng nhập tên danh mục",
+    "validatedNameVi": "Vui lòng nhập tên Tiếng Việt",
+    "validatedNameEn": "Vui lòng nhập tên Tiếng Anh",
     "categoryName": "Nhập tên danh mục",
+    "errorSave": "Lỗi khi lưu danh mục",
+    "exampleVi": "Ví dụ: Điện thoại di động",
+    "exampleEn": "Ví dụ: Mobile Phone",
+    "slug": "Slug (tự động sinh, có thể sửa)",
+    "slugValidated": "Vui lòng nhập slug",
+    "slugEx": "dien-thoai",
 
     "confirmDeleteTitle": "Xác nhận xóa",
     "confirmDeleteMessage": "Bạn có chắc chắn muốn xóa danh mục \"{name}\" không?",
     "confirm": "Xác nhận",
     "cancel": "Hủy",
+    "update": "Cập nhật",
+    "create": "Tạo mới",
 
     "loading": "Đang tải...",
 

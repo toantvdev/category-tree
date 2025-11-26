@@ -26,6 +26,18 @@ export const useCreateCategory = () => {
   });
 };
 
+// Tạo category con
+export const useCreateChildCategory = () => {
+  const QueryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ parentId, dto }: { parentId: number; dto: Omit<CreateCategory, 'parent_id'> }) =>
+      categoryService.createChild(parentId, dto),
+    onSuccess: () => {
+      QueryClient.invalidateQueries({ queryKey: CATEGORY_QUERY_KEY });
+    },
+  });
+};
+
 // Cập nhật category
 export const useUpdateCategory = () => {
   const queryClient = useQueryClient();
@@ -41,7 +53,7 @@ export const useUpdateCategory = () => {
 export const useDeleteCategory = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (id: string) => categoryService.delete(id),
+    mutationFn: (id: number) => categoryService.delete(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: CATEGORY_QUERY_KEY });
     },

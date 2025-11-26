@@ -5,7 +5,7 @@ import type { Category } from '@/app/types/category/category';
 
 interface Props {
   category: Category;
-  onAdd: (parentId: string) => void;
+  onAdd: (parentId: number) => void;
   onEdit: (category: Category) => void;
   onDelete: (category: Category) => void;
 }

@@ -1,23 +1,23 @@
 import { create } from 'zustand';
-import { mockCategoriesData } from '@/app/constants/category/data';
 
 interface CategoryState {
-  expandedIds: Set<string>;
-  selectedId: string | null;
-  draggedId: string | null;
-  toggleExpand: (id: string) => void;
-  setSelected: (id: string | null) => void;
-  setDragged: (id: string | null) => void;
-  expandAll: () => void;
+  expandedIds: Set<number>;
+  selectedId: number | null;
+  draggedId: number | null;
+
+  toggleExpand: (id: number) => void;
+  setSelected: (id: number | null) => void;
+  setDragged: (id: number | null) => void;
+  expandAll: (allIds: number[]) => void; // nhận vào danh sách ID
   collapseAll: () => void;
 }
 
 export const useCategoryStore = create<CategoryState>((set) => ({
-  expandedIds: new Set<string>(),
+  expandedIds: new Set<number>(),
   selectedId: null,
   draggedId: null,
 
-  toggleExpand: (id: string) =>
+  toggleExpand: (id: number) =>
     set((state) => {
       const newExpanded = new Set(state.expandedIds);
       if (newExpanded.has(id)) {
@@ -28,11 +28,10 @@ export const useCategoryStore = create<CategoryState>((set) => ({
       return { expandedIds: newExpanded };
     }),
 
-  setSelected: (id: string | null) => set({ selectedId: id }),
+  setSelected: (id: number | null) => set({ selectedId: id }),
+  setDragged: (id: number | null) => set({ draggedId: id }),
 
-  setDragged: (id: string | null) => set({ draggedId: id }),
-
-  expandAll: () => set({ expandedIds: new Set(mockCategoriesData.map((c) => c.id)) }),
+  expandAll: (allIds: number[]) => set({ expandedIds: new Set(allIds) }),
 
   collapseAll: () => set({ expandedIds: new Set() }),
 }));
