@@ -3,14 +3,15 @@
     "mainTitle": "Cây Danh Mục",
     "title": "Danh mục",
     "add": "Thêm danh mục",
-    "addRoot": "Thêm danh mục gốc",
+    "catRoot": "Danh mục cha",
     "edit": "Chỉnh sửa danh mục",
     "delete": "Xóa",
-    "expandAll": "Mở rộng tất cả",
-    "collapseAll": "Thu gọn tất cả",
+    "expandAll": "Mở rộng ",
+    "collapseAll": "Thu gọn ",
 
     "nameVi": "Tên danh mục tiếng Việt",
     "nameEn": "Tên danh mục tiếng Anh",
+    "save": "Lưu ",
 
     "createSuccess": "Tạo mới thành công",
     "updateSuccess": "Cập nhật thành công",
@@ -39,6 +40,10 @@
 
     "moveFailedChild": "Không thể kéo vào danh mục con của chính nó",
     "moveSuccess": "Cập nhật vị trí thành công",
-    "moveFailed": "Cập nhật vị trí thất bại"
+    "moveFailed": "Cập nhật vị trí thất bại",
+    "notifiSave": "Thay đổi đã được lưu tạm. Nhấn lưu để áp dụng",
+    "notifiError": " Không có thay đổi nào để lưu",
+    "saveOrderSuccess": "Đã lưu {count} thay đổi",
+    "cancelAll": " Đã huỷ tất cả thay đổi"
   }
 }

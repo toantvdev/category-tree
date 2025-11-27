@@ -3,7 +3,7 @@
     "mainTitle": "Category Tree",
     "title": "Categories",
     "add": "Add Category",
-    "addRoot": "Add Root Category",
+    "catRoot": "Parent Category",
     "edit": "Edit Category",
     "delete": "Delete",
     "expandAll": "Expand All",
@@ -11,6 +11,7 @@
 
     "nameVi": "Vietnamese Category Name",
     "nameEn": "English Category Name",
+    "save": "save",
 
     "createSuccess": "Created Successfully",
     "updateSuccess": "Updated Successfully",
@@ -39,6 +40,10 @@
 
     "moveFailedChild": "Cannot move a category into its own child",
     "moveSuccess": "Position updated successfully",
-    "moveFailed": "Failed to update position"
+    "moveFailed": "Failed to update position",
+    "notifiSave": "Changes have been saved temporarily. Click save to apply.",
+    "notifiError": "There are no changes to save.",
+    "saveOrderSuccess": "Saved {count} change",
+    "cancelAll": "All changes canceled"
   }
 }

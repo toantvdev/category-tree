@@ -32,20 +32,6 @@ export const categoryService = {
     }
   },
 
-  // Tạo category con
-  createChild: async (
-    parentId: number,
-    dto: Omit<CreateCategory, 'parent_id'>
-  ): Promise<Category> => {
-    try {
-      const payload: CreateCategory = { ...dto, parent_id: parentId };
-      const { data } = await axios.post<ApiResponse<Category>>(`${BASE_URL}/category`, payload);
-      return data.data;
-    } catch (err: any) {
-      throw new Error(err.response?.data?.message || 'Tạo danh mục con thất bại');
-    }
-  },
-
   // Cập nhật category
   update: async (dto: UpdateCategory): Promise<Category> => {
     try {
@@ -72,10 +58,10 @@ export const categoryService = {
   updateOrder: async (updates: UpdateCategoryOrder[]): Promise<void> => {
     try {
       const promises = updates.map((update) =>
-        axios.patch<ApiResponse<Category>>(`${BASE_URL}/category/category/${update.id}`, {
-          parent_id: update.parent_id,
-          order: update.order,
-        })
+        axios.patch<ApiResponse<Category>>(
+          `${BASE_URL}/category/update-categories-position/`,
+          updates
+        )
       );
       await Promise.all(promises);
     } catch (err: any) {

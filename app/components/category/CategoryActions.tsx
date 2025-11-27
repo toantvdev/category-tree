@@ -5,23 +5,13 @@ import type { Category } from '@/app/types/category/category';
 
 interface Props {
   category: Category;
-  onAdd: (parentId: number) => void;
   onEdit: (category: Category) => void;
   onDelete: (category: Category) => void;
 }
 
-export function CategoryActions({ category, onAdd, onEdit, onDelete }: Props) {
+export function CategoryActions({ category, onEdit, onDelete }: Props) {
   return (
     <Space size="small">
-      <Button
-        type="text"
-        size="small"
-        icon={<PlusOutlined />}
-        onClick={(e) => {
-          e.stopPropagation();
-          onAdd(category.id);
-        }}
-      />
       <Button
         type="text"
         size="small"
